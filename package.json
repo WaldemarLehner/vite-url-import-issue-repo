@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "build": "npm run build:mc && npm run build:astro",
+    "build:mc": "cd packages/animations && npm run build",
+    "build:astro": "cd packages/astro-app && npm run build",
+    "host": "npx serve ./packages/astro-app/dist -l 1234"
+  }
+}
