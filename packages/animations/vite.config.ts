@@ -10,4 +10,13 @@ export default defineConfig({
     }),
     ffmpeg(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        dir: "./dist",
+        minifyInternalExports: false,
+        entryFileNames: "[name].js",
+      },
+    },
+  },
 });
