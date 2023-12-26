@@ -1,16 +1,23 @@
 {
   "name": "root",
+  "type": "module",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@types/node": "^20.10.5",
+    "concurrently": "^8.2.2",
+    "glob": "^10.3.10",
+    "serve": "^14.2.1",
+    "vite-node": "^1.1.0"
   },
   "scripts": {
-    "build": "npm run build:mc && npm run build:astro",
-    "build:mc": "cd packages/animations && npm run build",
-    "build:astro": "cd packages/astro-app && npm run build",
-    "host": "npx serve ./packages/astro-app/dist -l 1234"
+    "build": "npm run build:lib && npm run build:frontend",
+    "build:lib": "cd packages/animations && npm run build",
+    "build:frontend": "cd packages/vite-frontend && npm run build",
+    "host": "serve ./packages/vite-frontend/dist -l 1234",
+    "dev": "cd packages/vite-frontend && npm run dev",
+    "copy-makeScene2D": "vite-node ./moveMakeScene2D.ts"
   }
 }
