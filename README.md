@@ -19,9 +19,9 @@ Animations made with Motion Canvas. The details are not relevant for the Repro. 
 
 ### vite-frontend
 
-This is just the Vanilla+TS Template. Inside the `main.ts` I import an animation file from the `animations` Package with the `?url` suffix and pass it Motion Canvas's Web Player.
+This is just the Vanilla+TS Template. Inside the `main.ts` I import an animation file from the `animations` Package with the `?url` suffix and pass it into Motion Canvas's Web Player.
 
-The relevant part is that expects an URL to the animation, which does get provided with `?url`. Only issue here is that the animation's dependency, `makeScene2D-$hash.js` does **not** get bundled into the frontend.
+The Web Player expects a URL to the animation, which does get provided with `?url`. Only issue here is that the animation's dependency, `makeScene2D-$hash.js` does **not** get bundled into the frontend.
 
 ## Steps to Reproduce
 
